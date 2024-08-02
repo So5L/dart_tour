@@ -1,0 +1,46 @@
+2.0 basic data types
+
+string a = 'min';
+bool a = true or false;
+int a = 12;
+double a = 12.12;
+num a = 12 or 12,12;
+
+list<int> numbers = [1,2,3,4,5];
+numbers.add(6);
+
+*if
+
+*String interpolation
+var name = 'min';
+var age = 30;
+var greeting = "Hello, I'm $name and ${age + 2}.";
+print(greeting);
+
+*Collection For
+var oldFriends = ["nico", "lynn"];
+var newFriends = [
+    "lewis",
+    "ralph",
+    "darren",
+    for (var friend in oldFriends) "⭐️ $friend",
+    ]
+    print(newFriends)
+
+=> [lewis, ralph, darren, ⭐️ nico, ⭐️ lynn] 
+
+*Map
+Type: Map<String, Object>
+//object means anything
+
+var player = {
+    "String" : 12
+}
+
+*Set
+Type: var => Set<int>
+var a = {1,2,3,4};
+//
+{} 이거로 만들면 Set 이고 [] 이거로 만들면 List
+List 에서 이미 존재하는 숫자 1을 여러번 추가하면
+List 뒤에 계속 추가 되지만 Set 에서는 추가 되지 않음

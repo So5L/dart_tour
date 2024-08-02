@@ -1,0 +1,3 @@
+#4 Classes
+
+// Class는 function과 다르게 꼭 type을 적어줘야 한다.

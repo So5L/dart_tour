@@ -1,0 +1,62 @@
+#3 Functions
+
+*Defining a Function
+void: This Function은 아무것도 return하지 않음. 부가적인 효과만 있을뿐 예를들어 Print 만 할 뿐 return 하지 않음
+void nameOfFunction(typeOfName name){
+    print("Hello $name nice to meet you!");
+}
+// typeOfName can be String, int, etc
+만약에 String을 Return 할 꺼면 void 대신 String을 적으면 되고
+Print 대신에 return 을 적으면 된다.
+
+ex1)
+String sayHello(String name) => "Hello $name nice to meet you!";
+
+void main(){
+    print(sayHello("min"));
+}
+
+=> Hello min nice to meet you!
+
+ex2)변수타입: String, bool, int etc
+변수타입 nameOfFunction({
+    required 변수타입 변수이름1, 
+//required를 앞에 적음으로써 유저는 꼭 변수이름과 변수1을 입력해야된다.
+    required 변수타입 변수이름2 = 변수이름, 
+//뭔가 다른지 까먹음.
+    변수타입 변수이름3 = 변수이름,
+//유저가 변수를 입력하지 않아도 자동적으로 변수이름이 입력된다.
+    [변수타입? 변수이름4 = 변수이름],
+//*Optional positional parameters(required는 아니고 유저가 적지 않았다면 변수이름으로 자동 등록됨)
+    }) {
+    return "abc $변수이름1, def $변수이름2 g... $변수이름3";
+}
+
+void main(){
+    print(nameOfFunction(
+        변수이름: 변수1, 
+        변수이름: 변수2, 
+        변수이름: 변수3,
+        ));
+}
+
+\\
+유저가 변수를 적지 않으면 적어둔 변수이름이 자동으로 적용됨.변수이름을 적지 않으면 null이 되서 null safety 적용되서 안됨.
+혹은 변수타입 앞에 required 를 붙여두면 반대로 유저는 무조건 변수를 입력해야됨.
+Funtion을 만들때 {}로 만들면 순서로 변수를 적는 시스템이 아닌 변수이름으로 확인하는 시스템으로 바뀜.
+
+*QQ Operator
+if (name != null)
+// 만약 name이 null이 아니라면
+
+name != null ? name.toUpperCase() : 'ANON';
+// 만약 name이 null이 아니라면 대문자화하고 맞다면 'ANON'으로 리턴
+
+name?.toUpperCase() ?? 'ANON';
+// ?? 기준으로 왼쪽이 null이라면 오른쪽거 실행. 아니라면 왼쪽꺼 실행
+
+name ??= 'a';
+// name이 null이라면 'a'를 리턴
+
+*Typedef
+// Type을 원하는 이름으로 설정할 수 있음(ex. String, map, etc)
